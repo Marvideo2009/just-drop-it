@@ -56,6 +56,7 @@ export class ReceiveRouter {
             }, () => {
                 error('receive - file not found %s', uri);
                 const err = new DisplayError('Unknown transfer reference');
+                console.log("ch")
                 err.status = 404;
                 err.sub_message = uri;
                 next(err);

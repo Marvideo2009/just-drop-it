@@ -70,9 +70,8 @@ export default class UrlGenerator {
             error("url generation not ready: file are not all loaded");
             return undefined;
         } else {
-            return this.adv[Math.floor(Math.random() * this.adv.length)] + '-' +
-                this.adj[Math.floor(Math.random() * this.adj.length)] + '-' +
-                this.noun[Math.floor(Math.random() * this.noun.length)];
+            const url = this.adv[Math.floor(Math.random() * this.adv.length)] + '-' + this.adj[Math.floor(Math.random() * this.adj.length)] + '-' + this.noun[Math.floor(Math.random() * this.noun.length)]
+            return url.substring(0,100).replace(/\r/g, '');
         }
     };
 

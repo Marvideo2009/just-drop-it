@@ -17,7 +17,8 @@
     "sourceMap": true,
     /* List of library files to be included in the compilation */
     "lib": ["es6"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "outDir": "build"
   },
 
   "include": [

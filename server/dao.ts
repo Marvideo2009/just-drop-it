@@ -72,6 +72,7 @@ export class Dao {
     getSenderFromUri(uri: string, callback: (sender: FileSender) => void, notFoundCallback: () => void) {
         debug("Searching sender for URI %s", uri);
         const matchingSender = Array.from(this.senders.values()).find((item: FileSender) => item.uri === uri)
+        console.log(this.senders.values())
         if (matchingSender === undefined) {
             notFoundCallback()
         } else {
