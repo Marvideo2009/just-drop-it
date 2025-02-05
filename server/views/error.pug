@@ -19,16 +19,46 @@
  You should have received a copy of the GNU General Public License
  along with just-drop-it.  If not, see <http://www.gnu.org/licenses/>.
 
-extends layout.pug
+extends layout
 block extra_scripts
     script.
         window.onload = function() {
-            $("#warning-window").hide();
-            $("header").hide()
+            //- $("#warning-window").hide();
+            //- $("header").hide()
         }
+block extra_styles
+    style.
+      .error-container {
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1.error {
+        color: #dc3545;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #6c757d;
+      }
+      .home-link {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .home-link:hover {
+        background-color: #0056b3;
+      }
 block content
-    h1.error #{message}&nbsp;(
+    .error-container
+      h1.error
+        | #{message}&nbsp;(
         small #{sub_message}
         | )
-    if isLocal
+      if isLocal
         pre #{stack}
+      a.home-link(href="/") Retour à l'accueil

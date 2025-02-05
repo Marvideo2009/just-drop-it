@@ -47,15 +47,15 @@ block content
 
     div.row#selectFileContainer
         div.col-12
-            p Either drop a file below:
-            div.upload-drop-zone#drop-zone Just drag and drop a file here
+            p Soit déposer un fichier ci-dessous :
+            div.upload-drop-zone#drop-zone Faites simplement glisser et déposez un fichier ici
             form.form-inline.float-xs-right#myform(action="")
-                p Or select it with the file explorer:&nbsp;
+                p Ou sélectionnez-le avec l'explorateur de fichiers :&nbsp;
                 label(for="file")
                 input#file(type="file")
     div.row.top-buffer#copyLinkContainer(style="display: none;")
         div.col-12
-            p.lead Tell your friend to go to this url:
+            p.lead Dites à votre ami d'aller sur cette URL :
             p.text-muted.text-center.lead#generatedurl
 
             span.text-success.float-end.icon-checkbox-tick#clipboardcopyok(aria-hidden="true",data-feather="check")
@@ -64,7 +64,7 @@ block content
     div#transferContainer(style="display: none;")
         div.row.top-buffer
             div.col-12
-                p.lead Each transfer will start as soon as your friends open the link.
+                p.lead Chaque transfert commencera dès que vos amis ouvriront le lien.
                 p.text-muted.text-center.lead#generatedurlreminder
                 p &nbsp;
                     span#filename

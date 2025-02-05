@@ -31,7 +31,8 @@ export default class Utils {
     }
 
     static isDevDeployment(): boolean {
-        return process.env.NODE_ENV !== "production";
+        // return process.env.NODE_ENV !== "production";
+        return false
     }
 
     static getUserMessage() : string  {
@@ -39,12 +40,12 @@ export default class Utils {
     }
 
     static getADumbQuote() : string {
-        const dumbQuotes = ["Let us ease your file transfers",
-            "Making the world a better place",
-            "Make file transfers, not war",
-            "When file transfer becomes pleasure",
-            "File transfer is not a fatality",
-            "Helping humanity thrive"];
+        const dumbQuotes = ["Facilitons vos transferts de fichiers",
+            "Rendre le monde meilleur",
+            "Faites des transferts de fichiers, pas la guerre",
+            "Quand le transfert de fichiers devient un plaisir",
+            "Le transfert de fichiers n’est pas une fatalité",
+            "Aider l’humanité à prospérer"];
         return  dumbQuotes[Math.floor(Math.random() * dumbQuotes.length)];
     }
 

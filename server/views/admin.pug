@@ -25,10 +25,10 @@ block extra_scripts
 block content
     ul
         each sender in senders
-            li= "Sender " +  sender.id  + ": " + sender.fileName
+            li= "Expéditeur " +  sender.id  + ": " + sender.fileName
                 ul
                     each receiverId in sender.receivers
-                        li= "Receiver " + receiverId
+                        li= "Récepteur " + receiverId
 
 
 

@@ -65,41 +65,42 @@ export class App {
 
         this.app.use('/', this.sendRouter.get());
         this.app.use(this.receiveUriPath, this.receiveRouter.get());
-        this.app.use('/admin', (new AdminRouter()).get());
+        // this.app.use('/admin', (new AdminRouter()).get());
         this.app.use('/js', (new JavascriptLibsRouter()).get());
 
 
 // catch 404 and forward to error handler
         this.app.use(function (req: Request, res: Response, next: NextFunction) {
             console.log("not found");
-            let err = {
-                message: 'Not Found',
-                status: 404,
+            res.status(404);
+            res.render('error', {
+                dumbContent: "",
+                isLocal: Utils.isDevDeployment(),
+                jdropitVersion: Utils.getVersion(),
+                message: "Not Found",
                 sub_message: "Check your url"
-            };
-
-            next(err);
+            });
         });
 
 // error handlers
 
 // development error handler
 // will print stacktrace
-        if (this.app.get('env') === 'development') {
-            console.log("enabling stacks");
-            this.app.use(function (err: any, req: Request, res: Response) {
-                console.error(err);
-                res.status(err.status || 500);
-                res.render('error', {
-                    dumbContent: "",
-                    isLocal: Utils.isDevDeployment(),
-                    jdropitVersion: Utils.getVersion(),
-                    message: err.message,
-                    sub_message: err.sub_message,
-                    error: err
-                });
-            });
-        }
+        // if (this.app.get('env') === 'development') {
+        //     console.log("enabling stacks");
+        //     this.app.use(function (err: any, req: Request, res: Response) {
+        //         console.error(err);
+        //         res.status(err.status || 500);
+        //         res.render('error', {
+        //             dumbContent: "",
+        //             isLocal: Utils.isDevDeployment(),
+        //             jdropitVersion: Utils.getVersion(),
+        //             message: err.message,
+        //             sub_message: err.sub_message,
+        //             error: err
+        //         });
+        //     });
+        // }
 
 
 // production error handler

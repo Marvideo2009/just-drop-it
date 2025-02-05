@@ -74,8 +74,8 @@ SenderHandler.prototype = {
         this.socket.on('server_rcv_url_generated', function (url) {
             debug("url generated - %s", url);
             that.receiverUrl = window.location.host + url;
-            $('#generatedurl').html("http://" + that.receiverUrl);
-            $('#generatedurlreminder').html("http://" + that.receiverUrl);
+            $('#generatedurl').html("https://" + that.receiverUrl);
+            $('#generatedurlreminder').html("https://" + that.receiverUrl);
 
         });
 

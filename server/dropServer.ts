@@ -51,7 +51,7 @@ export class DropServer {
 
         //retrieve openshift variables
         const ipAddress : string|undefined = process.env.OPENSHIFT_NODEJS_IP || error('No OPENSHIFT_NODEJS_IP var, using ANY') || undefined;
-        const port : number = process.env.OPENSHIFT_NODEJS_PORT as unknown as number || 8080;
+        const port : number = process.env.OPENSHIFT_NODEJS_PORT as unknown as number || 3034;
 
         //------------------------
         const ioServer = new IoServerWrapper()
@@ -59,6 +59,7 @@ export class DropServer {
         //  Start the app on the specific interface (and port).
 
         server.listen(port, ipAddress, () => {
+            console.log(`Started listen on port ${port} !`)
             debug('%s: JustDropIt(%s) started on %s:%d ...',
                 new Date(Date.now()), process.env.npm_package_version, ipAddress == null ? "*" : ipAddress, port);
         });
